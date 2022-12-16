@@ -12,12 +12,11 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-        <Route path={"/"} element={<ItemListContainer />} />
-        <Route path={"/category/:id"} element={<ItemListContainer />} />
-        <Route path={"/item/:id"} element={<ItemDetailContainer />} />
-        <Route path={"*"} element={<Error404 />} />
+          <Route exact path={"/"} element={<ItemListContainer />} />
+          <Route exact path={"/category/:id"} element={<ItemListContainer />} />
+          <Route exact path={"/item/:id"} element={<ItemDetailContainer />} />
+          <Route exact path={"*"} element={<Error404 />} />
         </Routes>
-        <ItemListContainer />
         <PromocionApp />
         <Footer />
       </BrowserRouter>

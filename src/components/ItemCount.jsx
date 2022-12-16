@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 const ItemCount = ({stockItems}) => {
+    console.log(stockItems);
     const [counter, setCounter] = useState(1);
     const [stock, setStock] = useState(stockItems);
 
@@ -26,9 +27,9 @@ const ItemCount = ({stockItems}) => {
     }
 
     return (
-        <div className="container">
+        <div className="container text-center">
             <div className="row mb-3">
-                <div className="col-md-2">
+                <div className="col-md-12">
                     <div className="btn-group" role="group" aria-label="Basic outlined example">
                         <button type="button" className="btn btn-outline-primary" onClick={decrementarStock}>-</button>
                         <button type="button" className="btn btn-outline-primary">{counter}</button>
@@ -37,7 +38,7 @@ const ItemCount = ({stockItems}) => {
                 </div>
             </div>
             <div className="row">
-                <div className="col-md-2">
+                <div className="col-md-12">
                     <button type="button" className="btn btn-outline-primary" onClick={onAdd}>Agregar al carrito</button>
                 </div>
             </div>

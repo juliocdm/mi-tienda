@@ -1,7 +1,6 @@
 import React from "react";
 
 const Error404 = () => {
-
     return (
         <div className="container">
             <div className="row my-5">
