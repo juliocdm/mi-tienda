@@ -10,7 +10,7 @@ const Cart = () => {
             <div className="container py-5">
                 <div className="row">
                     <div className="col-md-12 text-center">
-                        <div className="alert alert-danger text-center">
+                        <div className="alert alert-danger text-center" role='alert'>
                             No se encontraron productos en el carrito
                         </div>
                         <Link to={'/'} className='btn fondoNaranja'>Volver a la página principal</Link>

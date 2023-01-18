@@ -1,5 +1,6 @@
-import { doc, addDoc, collection, getFirestore, updateDoc } from "firebase/firestore";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 import React, { useState, useContext } from "react";
+import { Navigate } from "react-router-dom";
 import { CartContext } from "./context/CartContext";
 
 const Checkout = () => {
@@ -22,8 +23,6 @@ const Checkout = () => {
         const ordersCollection = collection(db, 'orders');
         addDoc(ordersCollection, order).then((snapShot) => {
             setOrderId(snapShot.id);
-            const orderDoc = doc(db, 'orders', snapShot.id);
-            updateDoc(orderDoc, {total: order.total * 0.9}); // Ejemplo de descuento
             clear();
         });
     };
@@ -68,11 +67,7 @@ const Checkout = () => {
             </div>
             <div className="row my-5">
                 <div className="col text-center">
-                    { orderId ? 
-                    <div className="alert alert-success" role='alert'>
-                        <h1>¡Felicitaciones!</h1>
-                        <p>Tu número de orden es: {orderId}</p>
-                    </div> : ''}
+                    { orderId ? <Navigate to={'/thankyou/' + orderId} /> : ''}
                 </div>
 
             </div>
